@@ -1,0 +1,267 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+margin: 0px;
+}
+
+#roots{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #232323;
+  height: 100vh;
+  overflow: auto;
+}
+
+#root{
+  width: 400px;
+  background: black;
+}
+
+@media(max-width:500px){
+  #root{
+    width: 100%;
+  }
+}
+
+.myheader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topheader{
+  width: 90%;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.webname{
+  width: 50%;
+}
+
+.webname h1{
+  margin: 0px;
+  font-size: 25px;
+  color: orangered;
+}
+
+.webname h1 span{
+  color: white;
+}
+
+.webicon{
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.menuheader{
+  width: 90%;
+  height: 7vh;
+  overflow: auto;
+}
+.overflowheader{
+  display: flex;
+  align-items: center;
+  height: 7vh;
+}
+.menuheader button{
+  
+  color: white;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 40px;
+  border:none;
+  outline: none;
+  margin-right: 30px;
+  background: #232323;
+  font-weight: bold;
+  text-shadow: 0px 0px 2px #ccc;
+  cursor: pointer;
+}
+
+.menuheader button:hover{
+  background: linear-gradient(to right, orangered, brown);
+}
+
+.bodydiv{
+  width: 100%;
+  height: 85vh;
+  overflow: auto;
+}
+
+.amountdiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.amountbox{
+  width: 90%;
+  overflow:auto;
+}
+
+.amountbox h1{
+  margin-top: 0px;
+  font-weight: normal;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: flex-end;
+  text-shadow: 0px 0px 2px white;
+}
+
+.amountbox b{
+  font-weight: normal;
+  font-size: 12px;
+  color: #999;
+
+}
+
+.amountbox span{
+  font-size: 13px;
+}
+
+.othertokens{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tokenbox{
+  width: 90%;
+}
+
+.tokenbox span{
+  color: white;
+}
+
+.tokenrow{
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.divlogo{
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.divlogo span{
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.divname{
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.divname span{
+  color: white;
+  text-shadow: 0px 0px 2px white;
+}
+
+.divname b{
+  font-weight: normal;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.divamount{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.divamount span{
+  color: white;
+  text-shadow: 0px 0px 2px white;
+  font-size: 15px;
+}
+
+.divamount b{
+  font-weight: normal;
+  font-size: 13px;
+  color: rgb(0, 200, 100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.transact span{
+  font-size: 13px;
+  font-weight: normal;
+  text-shadow: none;
+}
+
+.transact2 span{
+  font-size: 13px;
+  font-weight: normal;
+  text-shadow: none;
+  margin-right: 10px;
+}
+
+.transact b{
+  font-size: 12px;
+}
+
+.transactionrow{
+  background: rgba(255, 255, 255,0.1);
+  border-radius: 10px;
+}
+
+.trl{
+  display: flex;
+  justify-content: center;
+}
+
+.mygames{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mygames button{
+  padding: 10px;
+  font-size: 15px;
+  border:none;
+  outline: none;
+  border-radius: 10px;
+  background: lightgreen;
+  color: green;
+  margin-right: 10px;
+}
