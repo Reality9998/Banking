@@ -315,7 +315,7 @@ function Index(){
                 </div>
             </div>
 
-            <div className="othertokens" style={{display:"none"}}>
+            <div className="othertokens" style={{display:"none",color:"red"}}>
                 <div className="tokenbox">
                     <div className="tokenhint">
                         <span>My Games</span>
