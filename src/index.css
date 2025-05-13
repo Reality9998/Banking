@@ -273,6 +273,7 @@ margin: 0px;
   height: 10vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .headerbox{
@@ -343,4 +344,183 @@ margin: 0px;
   padding-bottom: 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 100px rgb(20, 40, 50);
+  overflow: auto;
+}
+
+.circleoverflow{
+  display: flex;
+}
+
+.tokenbalance{
+  width: 100%;
+  display: flex;
+  border-radius: 2px;
+  border:1px solid #232323;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tokenname{
+  width: 30%;
+  border-right: 1px solid #232323;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tokenvalue{
+  width: 70%;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.tokenrowss{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.tokenrowss span{
+  font-size: 12px;
+  color: #999;
+}
+
+.tokenrowss b{
+  font-weight: normal;
+  color: #f8f8f8;
+  font-size: 15px;
+}
+
+.valuetop{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.valuetop span{
+  font-size: 13px;
+}
+
+.volumerow{
+  width: 95%;
+  margin-bottom: 10px;
+  
+}
+
+.volumename {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.topvolume{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.volumename span{
+  color: #999;
+  font-size: 12px;
+}
+
+.bottomvolume{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.lightgreen{
+  width: 70%;
+  height: 4px;
+  background: lightgreen;
+  border-radius: 4px;
+}
+
+.orangered{
+  width: 20%;
+  height: 4px;
+  background: orangered;
+  border-radius: 4px;
+}
+
+.mytrow{
+  width: 95%;
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.personalrow{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.personaleft{
+  display: flex;
+  align-items: center;
+}
+
+.personaleft span{
+  font-size: 13px;
+  color: #ccc;
+}
+
+.personalright span{
+  font-size: 12px;
+  color: aquamarine;
+}
+
+.giftform{
+width: 100%;
+margin-top: 20px;
+}
+
+.giftform form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.giftform form .input{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #232323;
+  border-radius: 5px;
+}
+
+.giftform form .input input{
+  width: 90%;
+  border:none;
+  outline:none;
+  background: none;
+  text-align: center;
+  font-size: 18px;
+}
+
+.giftform form .input label{
+  font-size: 13px;
+}
+
+.giftform form input[type="submit"]{
+  width: 100%;
+  height: 40px;
+  background: mediumseagreen;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 5px;
+  margin-top: 10px;
 }

@@ -1,9 +1,46 @@
-import { Bell, ChevronLeft, Gamepad2, Settings, User } from "lucide-react";
+import { Bell, ChevronLeft, Gamepad2, Mail, Phone, Settings, User } from "lucide-react";
 import { useState } from "react";
 import Transactions from "../components/Transaction";
 import Tokens from "../components/Tokens";
 import Circle from "../components/Circle";
+import Header from "../components/Header";
+interface Tokenss{
+    name:string,
+    value:number,
+    deposit:number,
+    receive:number,
+    abbr:string,
+    color:string
+}
 
+const tokenss:Tokenss[]=[
+    {
+        name:"Grade",
+        value:50000,
+        deposit:20000,
+        receive:5000,
+        abbr:"GRD",
+        color:"orangered"
+    },
+
+    {
+        name:"Drop",
+        value:3200,
+        deposit:1000,
+        receive:200,
+        abbr:"DRP",
+        color:"rgb(0,100,200)"
+    },
+
+    {
+        name:"WOLF",
+        value:3200,
+        deposit:1000,
+        receive:200,
+        abbr:"WOL",
+        color:"#f8f8f8"
+    },
+];
 function Index(){
     const arr:string[]=[
         "Home","Tokens","Send","Receive","Withdraw","Deposit","Gifts"
@@ -23,14 +60,8 @@ function Index(){
         (page=="mygames") && (
         
     <div className="morepage">
-        <div className="moreheader">
-            <div className="headerbox">
-                <ChevronLeft  onClick={() => morePage("homepage")}/>
-                <span>Games</span>
-                <i></i>
-            </div>
-        </div>
-    </div>
+    <Header headerText="Games" goBack={() => morePage("homepage")} />
+</div>
         )
     }
 
@@ -38,13 +69,7 @@ function Index(){
         (page=="transactions") && (
         
     <div className="morepage">
-        <div className="moreheader">
-            <div className="headerbox">
-                <ChevronLeft  onClick={() => morePage("homepage")}/>
-                <span>Transactions</span>
-                <i></i>
-            </div>
-        </div>
+        <Header headerText="Transactions" goBack={() => morePage("homepage")} />
 
         <div className="morebody">
             <div className="middlebody">
@@ -60,13 +85,8 @@ function Index(){
         (page=="profile") && (
         
     <div className="morepage">
-        <div className="moreheader">
-            <div className="headerbox">
-                <ChevronLeft  onClick={() => morePage("homepage")}/>
-                <span>Profile</span>
-                <i></i>
-            </div>
-        </div>
+        <Header headerText="Profile" goBack={() => morePage("homepage")} />
+
 
 
         <div className="morebody">
@@ -80,11 +100,114 @@ function Index(){
                 <div className="tokenusage">
                     <span>Token Usage</span>
                     <div className="rowusage">
-                        <Circle val={"50%"} bac="orangered" />
-                        <Circle  val={"25%"} bac="lightgreen" />
-                        <Circle  val={"17%"} bac="rgb(0,100,200)" />
+                        <div className="circleoverflow">
+                            {
+                                tokenss.map((keys) =>(
+                                    <>
+                                    <Circle val={"50%"} bac={keys.color} name={keys.name} />
+                                    </>
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
+
+                <div className="tokenusage">
+                    <span>Token Balance</span>
+
+                    <div className="tokenbalance">
+                    {
+                    tokenss.map((keys)=>(
+                    <>
+                        <div className="mytrow">
+                        <div className="tokenname">
+                            <div className="tokenrowss">
+                                <span>{keys.abbr}</span>
+                                <b>{keys.value}</b>
+                            </div>
+                        </div>
+
+                        <div className="tokenvalue">
+                            <div className="valuetop">
+                            <span>{keys.name}</span>
+                            </div>
+
+                            <div className="volumerow">
+                                <div className="volumename">
+                                <span>Deposit/Receive</span>
+                                <span>Withdraw/Send</span>
+                                    
+                                </div>
+                                <div className="topvolume">
+                                    <span>{keys.deposit}</span>
+                                    <span>{keys.receive}</span>
+                                </div>
+
+                                <div className="bottomvolume">
+                                    <div className="lightgreen"></div>
+                                    <div className="orangered"></div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        </>
+                    )
+                )
+                    }
+                  
+                        
+                    </div>
+                </div>
+
+                <div className="tokenusage">
+                    <span>Personal Details</span>
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            <Mail size={19} />
+                            
+                            <span>Account ID</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>8368253547485</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <User size={19}/>
+                            <span>Full Name</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>Rena Reality</span>
+                        </div>
+                    </div>
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            <Phone size={19} />
+                            <span>Phone Number</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>+234(90)345 463 33</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            <Mail size={19} />
+                            <span>Email Address</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>realdave@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             
         </div>
@@ -96,14 +219,8 @@ function Index(){
         (page=="settings") && (
         
     <div className="morepage">
-        <div className="moreheader">
-            <div className="headerbox">
-                <ChevronLeft  onClick={() => morePage("homepage")}/>
-                <span>Settings</span>
-                <i></i>
-            </div>
-        </div>
-    </div>
+<Header headerText="Settings" goBack={() => morePage("homepage")} />
+</div>
         )
     }
 {
@@ -165,6 +282,28 @@ function Index(){
             </div>
 
             <div className="othertokens">
+            <div className="tokenbox">
+                    <div className="tokenhint">
+                        <span>My Gifts</span>
+                    </div>
+                    
+                    <div className="giftform">
+                        <form>
+                            <div className="input">
+                            <label>Input Your Gift ID</label>    
+                                <input />
+                            </div>
+                            
+                            <input type="submit" value="Check" />
+                        </form>
+                    </div>
+                    
+
+                    
+                </div>
+            </div>
+
+            <div className="othertokens">
                 <div className="tokenbox">
                     <div className="tokenhint">
                         <span>My Tokens</span>
@@ -176,7 +315,7 @@ function Index(){
                 </div>
             </div>
 
-            <div className="othertokens">
+            <div className="othertokens" style={{display:"none"}}>
                 <div className="tokenbox">
                     <div className="tokenhint">
                         <span>My Games</span>
