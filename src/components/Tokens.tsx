@@ -43,7 +43,7 @@ function Tokens(){
         {
                         tokens.map((keys) => (
                             <div className="tokenrow">
-                        <div className="divlogo"><span style={{background:`${keys.color}`}} >{keys.abbr}</span></div>
+                        <div className="divlogo"><span style={{background:"rgb(0,100,200)"}} >{keys.abbr}</span></div>
                         <div className="divname">
                             <span>{keys.name}</span>
                             <b>${keys.rate}</b>

@@ -1,10 +1,29 @@
-import { Bell, ChevronLeft, Gamepad2, Mail, Phone, Settings, User } from "lucide-react";
+import { Bell, Home, Mail, Phone, Settings, Star, Trophy, User } from "lucide-react";
 import { useState } from "react";
 import Transactions from "../components/Transaction";
 import Tokens from "../components/Tokens";
 import Circle from "../components/Circle";
 import Header from "../components/Header";
+import Leaderboard from "../components/Leaderboard";
+import Images from "../image/images.png";
+
+interface Graders{
+    pic:string,
+    txt:string
+}
+
+const graders:Graders[]=[
+    {pic:"orange",txt:"User 1"},
+    {pic:"silver",txt:"User 2"},
+    {pic:"brown",txt:"User 3"},
+    {pic:"rgb(0,100,200)",txt:"User 4"},
+    {pic:"rgb(0,200,100)",txt:"User 5"},
+    {pic:"purple",txt:"User 6"},
+    
+];
+
 interface Tokenss{
+    
     name:string,
     value:number,
     deposit:number,
@@ -43,7 +62,7 @@ const tokenss:Tokenss[]=[
 ];
 function Index(){
     const arr:string[]=[
-        "Home","Tokens","Send","Receive","Withdraw","Deposit","Gifts"
+        "Home","Tokens","Transactions","Send","Receive","Sell","Buy","Gifts"
     ];
     const games:string[]=[
         "Spin","Quiz","Guess Color"
@@ -52,16 +71,35 @@ function Index(){
 
     const[page, morePage]=useState("homepage");
     
-
+            const [ff, choseFilter]=useState("all");                      
     
 
     return (<>
     {
-        (page=="mygames") && (
+        (page=="leaderboard") && (
         
     <div className="morepage">
-    <Header headerText="Games" goBack={() => morePage("homepage")} />
-</div>
+    <Header headerText="Leaderboard" goBack={() => morePage("homepage")} />
+    <div className="morebody">
+        <div className="middlebody">
+            <div className="hintleader">
+                The leaderboard is base on most grade points. Prize attached to the top 10 graders in the last 30 days. The reward is in the first day of the month.
+            </div>
+
+            <div className="leaderbutton">
+                <button>All</button>
+                <button>Last 30 days</button>
+                <button>Last 7 days</button>
+                <button>Today</button>
+            </div>
+
+            <div className="fromleader">Top 100</div>
+            <Leaderboard />
+            
+        </div>
+    </div>
+    </div>
+
         )
     }
 
@@ -69,11 +107,41 @@ function Index(){
         (page=="transactions") && (
         
     <div className="morepage">
-        <Header headerText="Transactions" goBack={() => morePage("homepage")} />
-
+        <Header headerText="Notification" goBack={() => morePage("homepage")} />
+        
         <div className="morebody">
             <div className="middlebody">
-            <Transactions />
+            
+            
+
+            <div className="searchnotification">
+                <input placeholder="Search..." />
+            </div>
+            {[1,2].map(()=>(
+
+            
+            <div className="notificationrow">
+                <div className="sidenot1">
+                    <span>
+                        <Home size={20} color="#999" />
+                    </span>
+                </div>
+
+                <div className="sidenot2">
+                    <div className="topside">
+                        <span>Maintenance request update</span>
+                        <b>5h ago</b>
+                    </div>
+
+                    <div className="bottomside">
+                        <span>
+                        You sign up as a grader. Your AccountId is #7467274678384. Click to see more details
+                        </span>
+                    </div>
+                </div>
+            </div>
+            ))
+}
             </div>
             
         </div>
@@ -92,13 +160,16 @@ function Index(){
         <div className="morebody">
             <div className="middlebody">
                 <div className="profiletop">
-                    <div className="profilepic"></div>
+                    <div className="profilepic">
+                        <img src={Images} alt="" />
+
+                    </div>
                     <b>Rena Reality</b>
                     <span>realitydave@gmail.com</span>
                 </div>
 
                 <div className="tokenusage">
-                    <span>Token Usage</span>
+                    <span className="rowblue">Token Usage</span>
                     <div className="rowusage">
                         <div className="circleoverflow">
                             {
@@ -113,7 +184,7 @@ function Index(){
                 </div>
 
                 <div className="tokenusage">
-                    <span>Token Balance</span>
+                    <span className="rowblue">Token Balance</span>
 
                     <div className="tokenbalance">
                     {
@@ -161,7 +232,7 @@ function Index(){
                 </div>
 
                 <div className="tokenusage">
-                    <span>Personal Details</span>
+                    <span className="rowblue">Personal Details</span>
                     <div className="personalrow">
                         <div className="personaleft">
                             <Mail size={19} />
@@ -170,7 +241,7 @@ function Index(){
                         </div>
 
                         <div className="personalright">
-                            <span>8368253547485</span>
+                            <span><input type="button" value="8368253547485" /></span>
                         </div>
                     </div>
 
@@ -182,7 +253,7 @@ function Index(){
                         </div>
 
                         <div className="personalright">
-                            <span>Rena Reality</span>
+                            <span><input type="button" value="Rena Reality" /></span>
                         </div>
                     </div>
                     <div className="personalrow">
@@ -192,7 +263,7 @@ function Index(){
                         </div>
 
                         <div className="personalright">
-                            <span>+234(90)345 463 33</span>
+                            <span><input type="button" value="+234(90)345 463 33" /></span>
                         </div>
                     </div>
 
@@ -203,10 +274,174 @@ function Index(){
                         </div>
 
                         <div className="personalright">
-                            <span>realdave@gmail.com</span>
+                            <span><input type="button" value="realdave@gmail.com" /></span>
+                        </div>
+                    </div>
+
+                    <div className="hintdiv">
+                        <span>Double tap to edit your details.</span>
+                    </div>
+                </div>
+                
+
+                <div className="tokenusage">
+                    <span className="rowblue">Account Information</span>
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Total Balance</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>$56,000.00</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Date Joined</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>10th January, 2025</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Grade Point</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
+                        </div>
+                    </div>
+
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Star <Star size={15} fill="yellow" /></span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
+                        </div>
+                    </div>
+
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Number of Deposit</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Number of Withdraw</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Total Transfer</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Total Received</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Total Gift Created</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Total Gift Received</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span>0</span>
                         </div>
                     </div>
                 </div>
+
+
+                <div className="tokenusage">
+                    <span className="rowblue">Withdrawal Details</span>
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Account No.</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span><input type="button" value="3134043841" /></span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Account Name.</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span><input type="button" value="David Real" /></span>
+                        </div>
+                    </div>
+
+                    <div className="personalrow">
+                        <div className="personaleft">
+                            
+                            <span>Bank Name</span>
+                        </div>
+
+                        <div className="personalright">
+                            <span><input type="button" value="First Bank" /></span>
+                        </div>
+                    </div>
+
+                    <div className="hintdiv">
+                        <span>Double tap to edit bank details.</span>
+                    </div>
+                </div>
+
+                
+
 
             </div>
             
@@ -235,10 +470,10 @@ function Index(){
                 </div>
 
                 <div className="webicon">
-                    <Gamepad2 onClick={() => morePage("mygames")}/>
-                    <Bell onClick={() => morePage("transactions")}/>
-                    <User onClick={() => morePage("profile")}/>
-                    <Settings onClick={() => morePage("settings")}/>
+                    <span onClick={() => morePage("leaderboard")}><Trophy color="#999" size={20}/></span>
+                    <span onClick={() => morePage("transactions")} ><Bell color="#999" size={20}/></span>
+                    <span onClick={() => morePage("profile")}><User color="#999" size={20}/></span>
+                    <span onClick={() => morePage("settings")}><Settings color="#999" size={20}/></span>
                     
 
                 </div>
@@ -249,7 +484,7 @@ function Index(){
                     
                     {
                         arr.map((keys)=> (
-                            <button style={{background : hovers == `${keys}` ? "linear-gradient(to right, orangered, brown)" : "#232323"}} onClick={()=>setHover(`${keys}`)}>{keys}</button>
+                            <button style={{background : hovers == `${keys}` ? "linear-gradient(to right, rgb(0, 200, 250), rgb(0, 100, 200))" : "#232323"}} onClick={()=>setHover(`${keys}`)}>{keys}</button>
                         )
 
                         )
@@ -271,20 +506,49 @@ function Index(){
                     </>
                 )
             }
+
+            {
+                (hovers=="Transactions") && (
+                    <>
+                    <div className="othertokens">
+                    <div className="tokenbox">
+                        
+            <div className="leaderbutton" style={{marginBottom:"20px"}}>
+            <button  className={ff === "all" ? "active" : ""} onClick={()=>choseFilter("all")}>All</button>
+                <button onClick={()=>choseFilter("credit")}>Credit</button>
+                <button onClick={()=>choseFilter("debit")}>Debit</button>
+                
+            </div>
+            <Transactions filterType={ff} />
+                        </div>
+                        </div>
+                    </>
+                )
+            }
             {
                 (hovers=="Home") && (
                     <>
                     <div className="amountdiv">
                 <div className="amountbox">
-                    <span>Total Balance</span>
-                    <h1>$56,000 <b>USD</b></h1>
+                    <span>Balance</span>
+                    <h1>$56,000</h1>
+                </div>
+                <div className="creditlimit">
+                    <div className="limitbar">
+                        <div className="movinglimit" style={{width:`${20}%`}}></div>
+                    </div>
+
+                    <div className="limitext">
+                        <span>Credit Limit</span>
+                        <span>$ 200 / $1000</span>
+                    </div>
                 </div>
             </div>
 
             <div className="othertokens">
             <div className="tokenbox">
                     <div className="tokenhint">
-                        <span>My Gifts</span>
+                        <span>Check Gift</span>
                     </div>
                     
                     <div className="giftform">
@@ -301,6 +565,16 @@ function Index(){
 
                     
                 </div>
+            </div>
+
+
+
+            <div className="othertokens" style={{display:"none"}}>
+            <div className="tokenbox">
+                    <div className="tokenhint">
+                        <span></span>
+                    </div>
+            </div>
             </div>
 
             <div className="othertokens">
@@ -336,8 +610,8 @@ function Index(){
                         <span>Recent Transactions</span>
                     </div>
                     
-                    <Transactions />
-                    
+                    <Transactions filterType="all" />
+                     
                     
                 </div>
             </div>
