@@ -31,8 +31,19 @@ margin: 0px;
   background: black;
 }
 
+.teaminside{
+  width: 400px;
+  height: 100vh;
+  background: rgba(0, 0, 0,.8);
+
+}
+
 @media(max-width:500px){
   #root{
+    width: 100%;
+  }
+
+  .teaminside{
     width: 100%;
   }
 }
@@ -44,7 +55,7 @@ margin: 0px;
 }
 .topheader{
   width: 90%;
-  height: 7vh;
+  height: 8vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +63,39 @@ margin: 0px;
 }
 
 .webname{
-  width: 50%;
+  width: 70%;
+  display: flex;
+}
+
+.homedp{
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: white;
+  overflow: hidden;
+}
+
+.homedp img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center ;
+}
+
+.homedetails{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.homedetails span{
+  font-size: 14px;
+}
+
+.homedetails b{
+  font-weight: normal;
+  font-size: 12px;
+  color: #999;
 }
 
 .webname h1{
@@ -68,9 +111,9 @@ margin: 0px;
 }
 
 .webicon{
-  width: 70%;
+  width: 30%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   
 }
 
@@ -78,12 +121,12 @@ margin: 0px;
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: #474747;
+  background: black;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  box-shadow: 0px 0px 5px #ccc;
   cursor: pointer;
+  border:1px solid black;
 }
 
 .menuheader{
@@ -117,7 +160,7 @@ margin: 0px;
 
 .bodydiv{
   width: 100%;
-  height: 85vh;
+  height: 84vh;
   overflow: auto;
 }
 
@@ -371,7 +414,9 @@ margin: 0px;
 }
 
 .profilepic img{
-  width: 70px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
 }
 
@@ -837,5 +882,397 @@ width: 100%;
   background: none;
   height: 40px;
   padding-left: 5%;
+  border-radius: 5px;
+}
+
+.settingrow{
+  width: 100%;
+  display: flex;
+  background: rgb(20, 20, 20);
+  align-content: center;
+  height: 60px;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.setting1{
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.setting2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.setting2 span{
+  font-size: 14px;
+  color: #ccc;
+}
+
+.setting2 b{
+  font-weight: normal;
+  font-size: 12px;
+  color: #999;
+}
+
+.teamcontainer{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.themecover{
+  display: flex;
+  flex-direction: column;
+}
+
+.teaminside1{
+  width: 100%;
+  height: 70vh;
+}
+
+.teaminside2{
+  width: 100%;
+  height: 30vh;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background:rgb(20, 20, 20);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.themetitle{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #232323;
+  margin-top: 20px;
+
+}
+
+.themetitle span{
+  margin-left:30px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.inputheme{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.inputheme input{
+  margin-left: 30px;
+}
+
+.inputheme span{
+  margin-left: 30px;
+  color: #ccc;
+  font-size: 14px;
+}
+.apphint{
+  margin-top: 20px;
+}
+.apphint span{
+  font-size: 13px;
+}
+
+.logoutdiv{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.logoutdiv button{
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, rgb(0, 30, 60),rgb(0,100,200));
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.sendfund{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sendfund label{
+  font-size: 13px;
+}
+
+.sendfund input{
+  width: 100%;
+  height: 40px;
+  border:none;
+  outline: none;
+  background: none;
+  border:1px solid #232323;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #ccc;
+  padding: 0px;
+}
+
+.returndata{
+  margin-top: 10px;
+}
+
+.returndata span{
+  color: #999;
+  font-size: 13px;
+}
+
+.returndata b{
+  font-weight: normal;
+  color:rgb(100, 200, 250);
+  font-size: 13px;
+}
+
+.sendfund button{
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, rgb(0,30,60), rgb(0,100,200));
+  font-size: 14px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-shadow: 0px 0px 3px white;
+}
+
+.recentreceip{
+  margin-top: 50px;
+}
+
+.recentreceip > span{
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.sellcrypto{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sellcrypto span{
+  display: flex;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.eachtoken{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.sellpoint{
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  margin-left: 20px;
+  animation-name: pointers;
+  animation-duration:  0.3s;
+  animation-timing-function:  linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pointers {
+    from{
+      box-shadow: 0px 0px 0px #f8f8f8;
+    }
+    to{
+      box-shadow: 0px 0px 10px white;
+    }
+}
+
+.selldata{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+
+.selldata span{
+  font-size: 13px;
+}
+
+.selldata b{
+  font-weight: normal;
+  font-size: 12px;
+  color: #999;
+}
+
+.eachtoken .formsss{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.eachtoken .formsss input{
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #232323;
+  text-align: right;
+  height: 40px;
+}
+
+.eachtoken .formsss label{
+  font-size: 13px;
+  color: #999;
+}
+
+.formtoken{
+  display: flex;
+  flex-direction: column;
+}
+
+.formtoken button{
+  height: 40px;
+  background: linear-gradient(to right, rgb(0,30,60), rgb(0,100,200));
+  border: none;
+  outline:none;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.cartdiv{
+  margin-top: 30px;
+
+}
+.cartdiv > span{
+  color: #ccc;
+  font-size: 13px;
+}
+
+.catheader{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #232323;
+}
+
+.catheader span{
+  color: #999;
+  font-size: 13px;
+}
+
+.cartrow{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #232323;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cat1{
+  display: flex;
+  flex-direction: column;
+}
+
+.cat1 span{
+  font-size: 13px;
+}
+
+.cat1 b{
+  font-weight: normal;
+  font-size: 13px;
+  color: #999;
+}
+
+.cat2{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.cat2 span{
+  font-size: 13px;
+}
+
+.cat2 b{
+  font-weight: normal;
+  font-size: 13px;
+}
+
+.cat3 button{
+  height: 25px;
+  border: none;
+  outline: none;
+  background: brown;
+  border-radius: 5px;
+}
+
+.withdrawfund label{
+  margin-top: 20px;
+}
+
+.withdrawfund select{
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background:none;
+  border: 1px solid #232323;
+  appearance: none;
+  padding-left: 5%;
+}
+
+.withdrawfund select option{
+  background: none;
+}
+
+.withd span{
+  cursor: pointer;
+}
+
+.withd{
+  margin-top: 30px;
+}
+
+.mybalances{
+  margin-top: 20px;
+}
+
+.mybalances span{
+  font-size: 13px;
+}
+
+.cat33 button{
+  height: 25px;
+  border: none;
+  outline: none;
+  background: rgb(0, 100, 50);
   border-radius: 5px;
 }
